@@ -35,7 +35,13 @@ echo "source ~/utilities/bash/.bashrc" >> ~/.bashrc
 - System monitoring aliases
 
 ### Scripts (Ready)
-- (TBD — see execution plan)
+
+**System Utilities**:
+- `file-mutex.sh` — File-based mutex locks for multi-process coordination
+  - Atomic locking, timeout recovery, exponential backoff
+  - Perfect for preventing file contention in concurrent workflows
+  - See: `scripts/system/MUTEX-GUIDE.md` for full documentation
+  - Example: `scripts/system/example-phase-1-mutex.sh`
 
 ### Dotfiles (Ready)
 - (TBD — see execution plan)
