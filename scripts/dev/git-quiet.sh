@@ -80,6 +80,18 @@ run_git() {
       pull)
         echo "✓ Repository up to date"
         ;;
+      fetch)
+        echo "✓ Fetched from remote"
+        ;;
+      stash)
+        echo "✓ Changes stashed"
+        ;;
+      rm)
+        echo "✓ Files removed"
+        ;;
+      branch)
+        echo "✓ Branch operation complete"
+        ;;
       *)
         # For other commands, show truncated output if exists
         if [[ -n "$output" ]]; then

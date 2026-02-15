@@ -51,14 +51,24 @@ alias la='ls -lha'
 alias l='ls -CF'
 alias cd-='cd -'
 
-# Git shortcuts
-alias gs='git status'
-alias ga='git add'
-alias gc='git commit'
-alias gp='git push'
-alias gl='git log --oneline -10'
-alias gd='git diff'
-alias gb='git branch'
+# Git shortcuts (with quiet output suppression)
+# Source git-quiet.sh for clean error handling
+[ -f ~/utilities/scripts/dev/git-quiet.sh ] && source ~/utilities/scripts/dev/git-quiet.sh
+
+# Git wrapper functions that suppress non-breaking errors
+gs() { git-quiet status "$@"; }
+ga() { git-quiet add "$@"; }
+gc() { git-quiet commit "$@"; }
+gp() { git-quiet push "$@"; }
+gl() { git-quiet log --oneline -10 "$@"; }
+gd() { git-quiet diff "$@"; }
+gb() { git-quiet branch "$@"; }
+
+# Additional git helpers
+gpl() { git-quiet pull "$@"; }          # Pull with suppression
+gf() { git-quiet fetch "$@"; }          # Fetch with suppression
+gst() { git-quiet stash "$@"; }         # Stash with suppression
+grm() { git-quiet rm "$@"; }            # Remove with suppression
 
 # Development
 alias python='python3'
