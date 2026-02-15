@@ -1,0 +1,55 @@
+# Utilities Repository .gitignore
+
+# System files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Temporary files
+*.tmp
+*.bak
+*.log
+
+# Local overrides (machine-specific)
+.bash_history
+.bash_sessions
+.bash_aliases.local
+.bash_functions.local
+.bashrc.local
+
+# Secrets and credentials (NEVER commit these)
+*.key
+*.pem
+.ssh/
+.env
+.env.local
+secrets/
+
+# Build artifacts
+dist/
+build/
+*.o
+*.so
+*.a
+
+# Package managers
+node_modules/
+__pycache__/
+*.egg-info/
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
